@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,7 +41,7 @@ public class MainController
         this.publicKey = keyFactory.generatePublic(keySpec);
     }
 
-    @PostMapping("/shipments")
+    @PutMapping("/shipments")
     public ResponseEntity<Void> updateShipment(@RequestHeader Map<String, String> headers,
                                                @RequestBody ProDetails proDetails)
     {
@@ -77,7 +78,7 @@ public class MainController
 
         log.info("isLegit : " + isLegit);
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     public static boolean isLegitDigitalSignature(byte[] input, byte[] signatureToVerify, PublicKey publicKey)
