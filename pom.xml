@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.averitt</groupId>
-    <artifactId>alpha-client</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>alpha-client</name>
-    <description>alpha-client</description>
+    <artifactId>client-samples</artifactId>
+    <version>1.0.0</version>
+    <name>client-samples</name>
+    <description>client-samples</description>
     <properties>
         <java.version>11</java.version>
     </properties>
